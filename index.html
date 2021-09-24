@@ -25,6 +25,9 @@
       rel="stylesheet"
     />
 
+    <!-- Main script -->
+    <script defer src="dist/script.js"></script>
+
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -45,23 +48,25 @@
             src="images/logo.svg"
             alt="Crowdfund Logo"
           />
-          <nav class="nav">
+          <nav class="nav" id="nav">
             <ul class="nav__list">
               <li class="navlink"><a href="#">About</a></li>
               <li class="navlink"><a href="#">Discover</a></li>
               <li class="navlink"><a href="#">Get Started</a></li>
             </ul>
           </nav>
-          <div class="header__menuControls">
+          <div class="header__menuControls" id="menuControls">
             <img
               src="images/icon-hamburger.svg"
               alt="open menu"
               class="burger"
+              id="burger"
             />
             <img
               src="images/icon-close-menu.svg"
               alt="close menu"
               class="closeMenu"
+              id="closeMenu"
             />
           </div>
         </div>

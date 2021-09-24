@@ -1,5 +1,16 @@
-console.log('HELLO');
+var openMenuBtn = document.getElementById("burger");
+var closeMenuBtn = document.getElementById("closeMenu");
+var menuControls = document.getElementById("menuControls");
+var nav = document.getElementById("nav");
 
-const test = () => {
-	console.log('this is a test');
-};
+openMenuBtn.addEventListener("click", openMenu);
+closeMenuBtn.addEventListener("click", closeMenu);
+
+function openMenu() {
+  nav.classList.add("open");
+  menuControls.classList.add("open");
+}
+function closeMenu() {
+  nav.classList.remove("open");
+  menuControls.classList.remove("open");
+}

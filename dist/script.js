@@ -1,2 +1,2 @@
-"use strict";console.log("HELLO");var test=function(){console.log("this is a test")};
+"use strict";var openMenuBtn=document.getElementById("burger"),closeMenuBtn=document.getElementById("closeMenu"),menuControls=document.getElementById("menuControls"),nav=document.getElementById("nav");function openMenu(){nav.classList.add("open"),menuControls.classList.add("open")}function closeMenu(){nav.classList.remove("open"),menuControls.classList.remove("open")}openMenuBtn.addEventListener("click",openMenu),closeMenuBtn.addEventListener("click",closeMenu);
 //# sourceMappingURL=script.js.map
