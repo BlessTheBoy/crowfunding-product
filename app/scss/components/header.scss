@@ -1,7 +1,7 @@
 @use "../util" as *;
 
 .header {
-  min-height: 40vh;
+  min-height: rem(300);
   background: url(./../../../images/image-hero-mobile.jpg) no-repeat;
   background-size: cover;
 
@@ -70,6 +70,7 @@
           text-decoration: none;
           color: #000;
           display: inline-block;
+          width: 100%;
           padding: rem(24);
           font-style: normal;
           font-weight: 500;
@@ -97,6 +98,54 @@
       }
       .burger {
         display: none;
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    background: url(./../../../images/image-hero-desktop.jpg) no-repeat;
+    min-height: rem(400);
+
+    &__menuControls {
+      display: none;
+    }
+
+    .navbar {
+      padding-top: rem(48);
+      padding-bottom: rem(48);
+    }
+
+    .nav {
+      // all: unset;
+      position: static;
+      padding: 0;
+      background: none;
+      width: initial;
+
+      &__list {
+        width: initial;
+        margin: 0;
+        background: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        gap: rem(32);
+
+        .navlink {
+          border: none;
+
+          a {
+            color: white;
+            font-size: rem(13);
+            line-height: rem(16);
+            padding: rem(3);
+
+            &:hover,
+            &:focus {
+              text-decoration: underline;
+            }
+          }
+        }
       }
     }
   }
