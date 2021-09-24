@@ -1,5 +1,9 @@
 @use "../util" as *;
 
+body {
+  background-color: var(--light-gray);
+}
+
 .container {
   padding: 0 rem(24);
   margin: 0 auto;
@@ -13,4 +17,8 @@
     width: 77%;
     max-width: rem(1110);
   }
+}
+
+.card-container{
+	
 }
