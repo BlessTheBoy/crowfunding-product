@@ -1,0 +1,22 @@
+@use "../util" as *;
+
+.card {
+  width: 100%;
+  background-color: white;
+  border-radius: rem(8);
+  padding: rem(40) rem(24);
+
+  font-size: rem(14);
+  line-height: rem(24);
+  color: var(--dark-gray);
+
+  &__heading {
+    color: black;
+    font-weight: 700;
+  }
+
+  &__subHeading {
+    color: var(--dark-cyan);
+    font-weight: 500;
+  }
+}

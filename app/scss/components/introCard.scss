@@ -1,0 +1,30 @@
+@use "../util" as *;
+
+.introCard {
+  text-align: center;
+  margin-top: rem(-55);
+  padding-top: 0;
+  // 92rem for desktop
+
+  .mastercraft-logo {
+    margin-top: rem(-28);
+  }
+
+  h1 {
+    margin: rem(24) auto rem(16);
+    font-style: normal;
+    font-weight: 700;
+    font-size: rem(22);
+    line-height: 1.2;
+  }
+
+  .description {
+    margin-bottom: rem(24);
+  }
+
+  .button-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
