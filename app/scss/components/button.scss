@@ -1,5 +1,20 @@
 @use "../util" as *;
 
 .btn {
-  padding: 0;
+  padding: em(18) em(42);
+  border-radius: rem(100);
+  background-color: var(--moderate-cyan);
+  color: white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: rem(16);
+  line-height: 1.25;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+
+  &.smallBtn {
+    font-size: 14px;
+  }
 }

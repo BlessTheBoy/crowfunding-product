@@ -1,19 +1,41 @@
+@use "../util" as *;
+
 html {
-	font-size: 100%;
-	box-sizing: border-box;
+  font-size: 100%;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-img{
-	object-fit: contain;
+img {
+  object-fit: contain;
+}
+
+.large {
+  display: none;
+}
+
+.med-desk {
+  display: none;
+}
+
+@include breakpoint(medium) {
+  .med-desk {
+    display: initial;
+  }
+}
+
+@include breakpoint(large) {
+  .large {
+    display: initial;
+  }
 }

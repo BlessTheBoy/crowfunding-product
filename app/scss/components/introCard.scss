@@ -22,9 +22,13 @@
     margin-bottom: rem(24);
   }
 
-  .button-cont{
+  .button-cont {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  @include breakpoint(medium) {
+    margin-top: rem(-92);
   }
 }
