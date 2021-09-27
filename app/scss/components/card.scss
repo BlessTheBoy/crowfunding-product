@@ -2,10 +2,11 @@
 
 .card {
   width: 100%;
+  max-width: rem(450);
+  margin: 0 auto rem(24);
   background-color: white;
   border-radius: rem(8);
   padding: rem(40) rem(24);
-
   font-size: rem(14);
   line-height: rem(24);
   color: var(--dark-gray);
@@ -18,5 +19,12 @@
   &__subHeading {
     color: var(--dark-cyan);
     font-weight: 500;
+  }
+
+  @include breakpoint(medium) {
+    max-width: rem(730);
+    font-size: rem(16);
+    width: 80%;
+    padding: rem(48);
   }
 }

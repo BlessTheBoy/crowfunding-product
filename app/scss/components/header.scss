@@ -103,7 +103,7 @@
   }
 
   @include breakpoint(medium) {
-    background: url(../images/image-hero-desktop.jpg) no-repeat;
+    background: url(../images/image-hero-desktop.jpg) center no-repeat;
     min-height: rem(400);
 
     &__menuControls {

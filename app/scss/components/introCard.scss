@@ -3,15 +3,18 @@
 .introCard {
   text-align: center;
   margin-top: rem(-55);
-  padding-top: 0;
-  // 92rem for desktop
+  padding-top: rem(52);
+  position: relative;
 
   .mastercraft-logo {
-    margin-top: rem(-28);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   h1 {
-    margin: rem(24) auto rem(16);
+    margin: 0 auto rem(16);
     font-style: normal;
     font-weight: 700;
     font-size: rem(22);
@@ -30,5 +33,14 @@
 
   @include breakpoint(medium) {
     margin-top: rem(-92);
+    padding-top: rem(56);
+
+    h1 {
+      font-size: rem(28);
+    }
+
+    .description {
+      margin-bottom: rem(40);
+    }
   }
 }

@@ -1,20 +1,26 @@
 @use "../util" as *;
 
 .btn {
+  font-size: rem(16);
   padding: em(18) em(42);
   border-radius: rem(100);
   background-color: var(--moderate-cyan);
   color: white;
   font-style: normal;
   font-weight: bold;
-  font-size: rem(16);
   line-height: 1.25;
   border: none;
   outline: none;
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   &.smallBtn {
-    font-size: 14px;
+    font-size: rem(14);
+  }
+
+  &:focus,
+  &:hover {
+    background-color: var(--btn-hover-background);
   }
 }

@@ -1,6 +1,20 @@
+@use "../util" as *;
+
 .bookmarkBtn {
   padding: 0;
   border: none;
   outline: none;
-  // background-color: transparent;
+  color: var(--dark-gray);
+  background-color: var(--bookmarkBtn-background);
+
+  span {
+    padding: em(18) em(24) em(18) em(16);
+  }
+
+  &:hover {
+    background-color: var(--bookmarkBtn-background);
+    svg circle {
+      fill: var(--bookmarkBtn-oval-hover);
+    }
+  }
 }
