@@ -13,14 +13,17 @@
       }
 
       &:nth-child(2) {
+        position: relative;
+
         &::before,
         &::after {
           content: " ";
           display: inline-block;
           width: rem(80);
           height: 1px;
+          position: absolute;
+          transform: translateX(-50%);
           background-color: #000;
-          color: #000;
           opacity: 0.15;
           margin: 0 auto;
         }
@@ -57,6 +60,33 @@
     &::-webkit-progress-value {
       background-color: var(--moderate-cyan);
       border-radius: 100px;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .analytics {
+      display: flex;
+      align-items: center;
+
+      li {
+        flex: 1;
+        text-align: left;
+
+        &:nth-child(2) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &::before,
+          &::after {
+            height: rem(80);
+            width: 1px;
+            background-color: #000;
+            color: #000;
+            opacity: 0.15;
+            margin: 0 auto;
+          }
+        }
+      }
     }
   }
 }
