@@ -31,7 +31,8 @@
     }
 
     &__figure {
-      padding: rem(24) 0 rem(9);
+      padding-top: rem(24);
+      margin-bottom: rem(9);
       font-style: normal;
       font-weight: bold;
       font-size: rem(32);
@@ -67,25 +68,39 @@
     .analytics {
       display: flex;
       align-items: center;
+      margin-bottom: rem(28);
 
       li {
         flex: 1;
         text-align: left;
 
+        &:not(:first-child) {
+          padding-left: rem(47);
+        }
+
         &:nth-child(2) {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          &::before,
-          &::after {
-            height: rem(80);
+          &::before {
+            height: rem(63);
             width: 1px;
-            background-color: #000;
-            color: #000;
-            opacity: 0.15;
-            margin: 0 auto;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+          }
+          &::after {
+            height: rem(63);
+            width: 1px;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
           }
         }
+      }
+
+      &__figure {
+        padding-top: 0;
+      }
+      &__detail {
+        padding-bottom: 0;
       }
     }
   }
