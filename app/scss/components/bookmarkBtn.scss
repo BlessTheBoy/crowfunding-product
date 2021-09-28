@@ -11,7 +11,8 @@
     padding: em(18) em(24) em(18) em(16);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var(--bookmarkBtn-background);
     svg circle {
       fill: var(--bookmarkBtn-oval-hover);
