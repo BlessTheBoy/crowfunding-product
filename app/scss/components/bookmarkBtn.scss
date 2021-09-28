@@ -18,4 +18,17 @@
       fill: var(--bookmarkBtn-oval-hover);
     }
   }
+
+  &.bookmarked {
+    color: var(--btn-hover-background);
+
+    svg {
+      path {
+        fill: white;
+      }
+      circle {
+        fill: var(--btn-hover-background);
+      }
+    }
+  }
 }
