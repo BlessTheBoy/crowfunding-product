@@ -18,6 +18,42 @@ body {
   padding: 0;
 }
 
+h1 {
+  color: black;
+  font-style: normal;
+  font-weight: 700;
+  font-size: rem(22);
+  line-height: 1.2;
+
+  @include breakpoint(medium) {
+    font-size: rem(20);
+  }
+}
+
+h2 {
+  color: black;
+  font-style: normal;
+  font-weight: bold;
+  font-size: rem(18);
+  line-height: 1.2;
+
+  @include breakpoint(medium) {
+    font-size: rem(20);
+  }
+}
+
+h3 {
+  color: black;
+  font-style: normal;
+  font-weight: bold;
+  font-size: rem(14);
+  line-height: 1.2;
+
+  @include breakpoint(medium) {
+    font-size: rem(18);
+  }
+}
+
 img {
   object-fit: contain;
 }

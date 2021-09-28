@@ -1,5 +1,6 @@
 @use "../util" as *;
 
+button,
 .btn {
   font-size: rem(16);
   padding: em(18) em(42);
@@ -17,6 +18,17 @@
 
   &.smallBtn {
     font-size: rem(14);
+  }
+
+  &:disabled {
+    background: #2f2f2f;
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:focus,
+    &:hover {
+      background: #2f2f2f;
+    }
   }
 
   &:focus,

@@ -5,11 +5,15 @@
   max-width: rem(450);
   margin: 0 auto rem(24);
   background-color: white;
-  border-radius: rem(8);
+  border-radius: var(--card-radius);
   padding: rem(40) rem(24);
   font-size: rem(14);
   line-height: 1.7;
   color: var(--dark-gray);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &__heading {
     color: black;
@@ -17,7 +21,7 @@
   }
 
   &__subHeading {
-    color: var(--dark-cyan);
+    color: var(--light-cyan);
     font-weight: 500;
   }
 
