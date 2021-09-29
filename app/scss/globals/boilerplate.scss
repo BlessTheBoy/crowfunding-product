@@ -16,7 +16,7 @@ html {
 *:focus {
   outline: none;
   border: 2px dashed #c19a6b;
-  border-radius: rem(8);
+  // border-radius: rem(8);
 }
 
 body {
@@ -58,6 +58,11 @@ h3 {
   @include breakpoint(medium) {
     font-size: rem(18);
   }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 img {

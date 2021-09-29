@@ -2,11 +2,17 @@
 
 body {
   background-color: var(--light-gray);
+  padding-bottom: rem(76);
+
+  @include breakpoint(large) {
+    padding: rem(124);
+  }
 }
 
 .container {
   padding: 0 rem(24);
   margin: 0 auto;
+  width: 100%;
 
   @include breakpoint(medium) {
     padding: rem(48);

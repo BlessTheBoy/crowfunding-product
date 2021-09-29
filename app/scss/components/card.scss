@@ -15,6 +15,14 @@
     margin-bottom: 0;
   }
 
+  header {
+    margin-bottom: rem(24);
+  }
+
+  p:not(:last-child) {
+    margin-bottom: rem(24);
+  }
+
   &__heading {
     color: black;
     font-weight: 700;

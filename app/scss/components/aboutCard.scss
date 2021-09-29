@@ -1,12 +1,6 @@
 @use "../util" as *;
 
 .aboutCard {
-  header {
-    margin-bottom: rem(24);
-  }
-  p:not(:last-child) {
-    margin-bottom: rem(24);
-  }
 
   .about {
     margin-bottom: rem(35);
@@ -19,26 +13,7 @@
       margin-bottom: rem(24);
     }
 
-    &__item {
-      border: 1px solid rgba(0, 0, 0, 0.0497193);
-      padding: rem(24);
-
-      &-name {
-        margin-bottom: rem(8);
-      }
-      &-amount {
-        font-size: rem(15);
-        display: flex;
-        align-items: center;
-        span {
-          font-weight: 700;
-          font-size: rem(32);
-          line-height: 1.2;
-          color: black;
-          margin-right: rem(8);
-        }
-      }
-    }
+    
   }
 
   @include breakpoint(medium) {
@@ -46,18 +21,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    .productList {
-      &__item {
-        &-name p{
-          font-size: rem(15);
-        }
-        &-actions {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-      }
     }
   }
 }

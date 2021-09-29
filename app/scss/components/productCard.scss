@@ -1,0 +1,37 @@
+@use "../util" as *;
+
+.productCard {
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  padding: rem(24);
+
+  &.out-of-stock {
+    opacity: 0.5;
+  }
+
+  &-name:not(:last-child) {
+    margin-bottom: rem(8);
+  }
+  &-amount {
+    font-size: rem(15);
+    display: flex;
+    align-items: center;
+    span {
+      font-weight: 700;
+      font-size: rem(32);
+      line-height: 1.2;
+      color: black;
+      margin-right: rem(8);
+    }
+  }
+
+  @include breakpoint(medium) {
+    &-name p {
+      font-size: rem(15);
+    }
+    &-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
