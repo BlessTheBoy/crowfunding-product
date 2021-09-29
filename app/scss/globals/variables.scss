@@ -1,5 +1,6 @@
 @use "../util" as *;
 
 :root {
-  --card-radius: .5rem;
+  --card-radius: 0.5rem;
+  --card-border: 1px solid rgba(0, 0, 0, 0.0497193);
 }

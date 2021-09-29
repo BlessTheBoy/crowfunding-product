@@ -34,6 +34,7 @@ function addBookmark() {
 }
 
 // Modals
+const modal = document.querySelector(".popup-modal");
 const modalTriggers = document.querySelectorAll(".popup-trigger");
 const modalCloseTrigger = document.querySelector(".popup-modal__close");
 const modalContainer = document.querySelector(".modal-container");
@@ -68,6 +69,11 @@ modalTriggers.forEach((trigger) => {
     });
     modalContainer.addEventListener("click", () => {
       closeModal();
+    });
+    modal.addEventListener("click", () => {
+      // closeModal();
+      // Do nothing
+      console.log("Modal clicked");
     });
   });
 });

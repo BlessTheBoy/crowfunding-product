@@ -46,13 +46,28 @@
   }
   ul {
     list-style: none;
+
+    li:not(:last-child) {
+      margin-bottom: rem(24);
+    }
+
+    article {
+      border: var(--card-border);
+      border-radius: var(--card-radius);
+    }
   }
 
   .productCard {
+    margin-bottom: 0;
+    border: none;
     header {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
+  }
+  .productForm {
+    border-top: var(--card-border);
+    padding: rem(24);
   }
 }
