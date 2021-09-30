@@ -82,7 +82,7 @@
           color: var(--moderate-cyan);
         }
 
-        + .radio {
+        & ~ .radio > span {
           border-color: var(--moderate-cyan);
         }
       }
