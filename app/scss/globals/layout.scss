@@ -5,7 +5,7 @@ body {
   padding-bottom: rem(76);
 
   @include breakpoint(large) {
-    padding: rem(124);
+    padding-bottom: rem(124);
   }
 }
 

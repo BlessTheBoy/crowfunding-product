@@ -60,14 +60,54 @@
   .productCard {
     margin-bottom: 0;
     border: none;
-    header {
-      display: flex;
-      align-items: center;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "radio header amount"
+      "description description description";
+    align-items: center;
+    row-gap: rem(24);
+    column-gap: rem(16);
+
+    .radio {
+      grid-area: radio;
+    }
+    .head {
       gap: 1rem;
+      grid-area: header;
+      margin-bottom: 0;
+      &:hover {
+        h3 {
+          color: var(--moderate-cyan);
+        }
+
+        + .radio {
+          border-color: var(--moderate-cyan);
+        }
+      }
+
+      h3 {
+        display: inline-block;
+        cursor: pointer;
+      }
+    }
+    .amount {
+      grid-area: amount;
+    }
+    .description {
+      grid-area: description;
     }
   }
   .productForm {
+    text-align: center;
     border-top: var(--card-border);
-    padding: rem(24);
+    padding: rem(24) rem(16);
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }

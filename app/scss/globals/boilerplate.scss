@@ -22,6 +22,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  caret-color: var(--moderate-cyan);
 }
 
 h1 {
@@ -70,21 +71,27 @@ img {
 }
 
 .large {
-  display: none;
+  display: none !important;
 }
 
 .med-desk {
-  display: none;
+  display: none !important;
 }
 
 @include breakpoint(medium) {
   .med-desk {
-    display: initial;
+    display: initial !important;
+  }
+  .mobile {
+    display: none !important;
   }
 }
 
 @include breakpoint(large) {
   .large {
     display: initial;
+  }
+  .medium {
+    display: none;
   }
 }

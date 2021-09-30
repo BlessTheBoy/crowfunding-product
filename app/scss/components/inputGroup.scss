@@ -1,0 +1,36 @@
+@use "../util" as *;
+
+.input-wrap {
+  display: block;
+  position: relative;
+
+  .prefix {
+    position: absolute;
+    top: 50%;
+    padding: 0rem 0.8rem;
+    padding-left: rem(24);
+    transform: translateY(-50%);
+    font-style: normal;
+    font-weight: 700;
+    font-size: rem(14);
+  }
+}
+
+input[type="text"] {
+  padding: rem(16) rem(22);
+  outline: none;
+  border: var(--card-border);
+  border-radius: 100px;
+  width: rem(100);
+  font-size: rem(14);
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-right: 1rem;
+
+  &:hover,
+  &:focus {
+    border-color: var(--moderate-cyan);
+  }
+}

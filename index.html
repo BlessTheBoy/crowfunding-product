@@ -216,27 +216,27 @@
             <li>
               <article>
                 <div class="card productCard">
-                  <header>
-                    <span class="radio">
-                      <input
-                        type="radio"
-                        name="product"
-                        id="no-pledge"
-                        value="no-pledge"
-                      />
-                      <span></span>
-                    </span>
-                    <div>
-                      <h3 class="card__heading productCard-name">
-                        Pledge with no reward
-                      </h3>
-                    </div>
+                  <span class="radio">
+                    <input
+                      type="radio"
+                      name="product"
+                      id="no-pledge"
+                      value="no-pledge"
+                    />
+                    <span></span>
+                  </span>
+                  <header class="head">
+                    <h3 class="card__heading productCard-name">
+                      Pledge with no reward
+                    </h3>
                   </header>
-                  <p>
-                    Choose to support us without a reward if you simply believe
-                    in our project. As a backer, you will be signed up to
-                    receive product updates via email.
-                  </p>
+                  <div class="description">
+                    <p>
+                      Choose to support us without a reward if you simply
+                      believe in our project. As a backer, you will be signed up
+                      to receive product updates via email.
+                    </p>
+                  </div>
                 </div>
                 <div></div>
               </article>
@@ -244,35 +244,49 @@
             <li>
               <article>
                 <div class="card productCard">
-                  <header>
-                    <span class="radio">
-                      <input
-                        type="radio"
-                        name="product"
-                        id="no-pledge"
-                        value="no-pledge"
-                      />
-                      <span></span>
-                    </span>
-                    <div>
-                      <h3 class="card__heading productCard-name">
-                        Bamboo Stand
-                      </h3>
-                      <p class="card__subHeading">Pledge $25 or more</p>
-                    </div>
+                  <span class="radio">
+                    <input
+                      type="radio"
+                      name="product"
+                      id="no-pledge"
+                      value="no-pledge"
+                    />
+                    <span></span>
+                  </span>
+                  <header class="head">
+                    <h3 class="card__heading productCard-name">Bamboo Stand</h3>
+                    <p class="card__subHeading">Pledge $25 or more</p>
                   </header>
-                  <p>
-                    You get an ergonomic stand made of natural bamboo. You've
-                    helped us launch our promotional campaign, and you’ll be
-                    added to a special Backer member list.
+                  <p class="productCard-amount med-desk amount">
+                    <span>101</span> left
                   </p>
-                  <p class="productCard-amount"><span>101</span> left</p>
+                  <div class="description">
+                    <p>
+                      You get an ergonomic stand made of natural bamboo. You've
+                      helped us launch our promotional campaign, and you’ll be
+                      added to a special Backer member list.
+                    </p>
+                    <p class="productCard-amount mobile">
+                      <span>101</span> left
+                    </p>
+                  </div>
                 </div>
                 <div class="productForm">
                   <p>Enter your pledge</p>
                   <form action="">
-                    <input type="text" name="pledge" id="bamboo-stand-pledge" />
-                    <input type="submit" value="Continue" class="btn" />
+                    <span class="input-wrap">
+                      <span class="prefix">$</span>
+                      <input
+                        type="text"
+                        name="pledge"
+                        id="bamboo-stand-pledge"
+                      />
+                    </span>
+                    <input
+                      type="submit"
+                      value="Continue"
+                      class="btn smallBtn"
+                    />
                   </form>
                 </div>
               </article>
