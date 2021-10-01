@@ -48,6 +48,16 @@ const forms = document.querySelectorAll(".productForm form");
 const inputs = document.querySelectorAll(
   ".productForm form input[type='text']"
 );
+const donations = document.getElementById("donations");
+const backers = document.getElementById("backers");
+const progress = document.getElementById("progress");
+
+let donationsValue = 89914;
+let backersValue = 5007;
+
+donations.innerText = numberWithCommas(donationsValue);
+backers.innerText = numberWithCommas(backersValue);
+progress.value = donationsValue;
 
 modalCloseTrigger.addEventListener("click", () => {
   closeModal(popupModal);
@@ -143,12 +153,24 @@ forms.forEach((form) => {
     let pledge = validatePledge(form, minPledge[`${form.dataset.product}`]);
 
     if (pledge) {
+      // update donations
+     donationsValue += pledge;
+     backersValue += 1;
+
+     donations.innerText = numberWithCommas(donationsValue);
+     backers.innerText = numberWithCommas(backersValue);
+     progress.value = donationsValue;
+
+      // update amount
+      amont = querySelector()
+      // update amount left and disable if zero
+
       // Show success modal
       closeModal(popupModal);
       openModal(successModal);
 
-      // update donations
       // select on header click
+      // Open already selected
 
       console.log(`pledge`, pledge);
     }
@@ -158,3 +180,9 @@ forms.forEach((form) => {
     validatePledge(form, minPledge[`${form.dataset.product}`]);
   });
 });
+
+function numberWithCommas(x) {
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
+}
