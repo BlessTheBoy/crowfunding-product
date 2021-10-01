@@ -38,7 +38,8 @@ const modal = document.querySelector(".popup-modal");
 const modalTriggers = document.querySelectorAll(".popup-trigger");
 const modalCloseTrigger = document.querySelector(".popup-modal__close");
 const bodyBlackout = document.querySelector(".body-blackout");
-const radioButtons = document.querySelectorAll("input[type='text']");
+const cardWrap = document.querySelectorAll(".cardWrap");
+const radios = document.querySelectorAll("input[type='radio']");
 
 modalTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => {
@@ -68,6 +69,10 @@ modalTriggers.forEach((trigger) => {
   });
 });
 
-radioButtons.forEach((radio) =>
-  radio.addEventListener("change", () => alert(radio.value))
+radios.forEach((radio) =>
+  radio.addEventListener("change", () => {
+    cardWrap.forEach((card) => {
+      card.classList.remove("checked");
+    });
+  })
 );

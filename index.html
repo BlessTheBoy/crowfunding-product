@@ -216,7 +216,7 @@
       </p>
       <ul>
         <li>
-          <article class="cardWrap checked">
+          <article class="cardWrap" data-product="no-reward">
             <div class="card productCard">
               <header class="head">
                 <h3 class="card__heading productCard-name">
@@ -227,8 +227,9 @@
                 <input
                   type="radio"
                   name="product"
-                  id="no-pledge"
-                  value="no-pledge"
+                  id="no-reward"
+                  value="no-reward"
+                  data-product="no-reward"
                 />
                 <span></span>
               </span>
@@ -245,15 +246,26 @@
               <form action="">
                 <span class="input-wrap">
                   <span class="prefix">$</span>
-                  <input type="text" name="pledge" id="no-reward-pledge" />
+                  <input
+                    type="text"
+                    name="pledge"
+                    class="pledge"
+                    id="no-reward-pledge"
+                    data-product="no-reward"
+                  />
                 </span>
-                <input type="submit" value="Continue" class="btn smallBtn" />
+                <input
+                  type="submit"
+                  value="Continue"
+                  class="btn smallBtn"
+                  data-product="no-reward"
+                />
               </form>
             </div>
           </article>
         </li>
         <li>
-          <article class="cardWrap">
+          <article class="cardWrap" data-product="bamboo-stand">
             <div class="card productCard">
               <header class="head">
                 <h3 class="card__heading productCard-name">Bamboo Stand</h3>
@@ -263,13 +275,14 @@
                 <input
                   type="radio"
                   name="product"
-                  id="no-pledge"
-                  value="no-pledge"
+                  id="bamboo-stand"
+                  value="bamboo-stand"
+                  data-product="bamboo-stand"
                 />
                 <span></span>
               </span>
               <p class="productCard-amount med-desk amount">
-                <span>101</span> left
+                <span class="amount" data-product="bamboo-stand">101</span> left
               </p>
               <div class="description">
                 <p>
@@ -277,7 +290,10 @@
                   helped us launch our promotional campaign, and you’ll be added
                   to a special Backer member list.
                 </p>
-                <p class="productCard-amount mobile"><span>101</span> left</p>
+                <p class="productCard-amount mobile">
+                  <span class="amount" data-product="bamboo-stand">101</span>
+                  left
+                </p>
               </div>
             </div>
             <div class="productForm">
@@ -285,15 +301,26 @@
               <form action="">
                 <span class="input-wrap">
                   <span class="prefix">$</span>
-                  <input type="text" name="pledge" id="bamboo-stand-pledge" />
+                  <input
+                    type="text"
+                    name="pledge"
+                    class="pledge"
+                    id="bamboo-stand-pledge"
+                    data-product="bamboo-stand"
+                  />
                 </span>
-                <input type="submit" value="Continue" class="btn smallBtn" />
+                <input
+                  type="submit"
+                  value="Continue"
+                  class="btn smallBtn"
+                  data-product="bamboo-stand"
+                />
               </form>
             </div>
           </article>
         </li>
         <li>
-          <article class="cardWrap">
+          <article class="cardWrap" data-product="black-stand">
             <div class="card productCard">
               <header class="head">
                 <h3 class="card__heading productCard-name">
@@ -305,13 +332,14 @@
                 <input
                   type="radio"
                   name="product"
-                  id="no-pledge"
-                  value="no-pledge"
+                  id="black-edition"
+                  value="black-edition"
+                  data-product="black-stand"
                 />
                 <span></span>
               </span>
               <p class="productCard-amount med-desk amount">
-                <span>64</span> left
+                <span class="amount" data-product="black-stand">64</span> left
               </p>
               <div class="description">
                 <p>
@@ -319,7 +347,9 @@
                   thank you. You’ll be added to our Backer member list. Shipping
                   is included.
                 </p>
-                <p class="productCard-amount mobile"><span>64</span> left</p>
+                <p class="productCard-amount mobile">
+                  <span class="amount" data-product="black-stand">64</span> left
+                </p>
               </div>
             </div>
             <div class="productForm">
@@ -327,15 +357,26 @@
               <form action="">
                 <span class="input-wrap">
                   <span class="prefix">$</span>
-                  <input type="text" name="pledge" id="black-edition-pledge" />
+                  <input
+                    type="text"
+                    name="pledge"
+                    class="pledge"
+                    id="black-edition-pledge"
+                    data-product="black-stand"
+                  />
                 </span>
-                <input type="submit" value="Continue" class="btn smallBtn" />
+                <input
+                  type="submit"
+                  value="Continue"
+                  class="btn smallBtn"
+                  data-product="black-stand"
+                />
               </form>
             </div>
           </article>
         </li>
         <li>
-          <article class="cardWrap out-of-stock">
+          <article class="cardWrap out-of-stock" data-product="mahogany-stand">
             <div class="card productCard">
               <header class="head">
                 <h3 class="card__heading productCard-name">
@@ -347,13 +388,14 @@
                 <input
                   type="radio"
                   name="product"
-                  id="no-pledge"
-                  value="no-pledge"
+                  id="mahogany-edition"
+                  value="mahogany-edition"
+                  data-product="mahogany-stand"
                 />
                 <span></span>
               </span>
               <p class="productCard-amount med-desk amount">
-                <span>0</span> left
+                <span class="amount" data-product="mahogany-stand">0</span> left
               </p>
               <div class="description">
                 <p>
@@ -361,7 +403,10 @@
                   and a personal thank you. You’ll be added to our Backer member
                   list. Shipping is included.
                 </p>
-                <p class="productCard-amount mobile"><span>0</span> left</p>
+                <p class="productCard-amount mobile">
+                  <span class="amount" data-product="mahogany-stand">0</span>
+                  left
+                </p>
               </div>
             </div>
             <div class="productForm">
@@ -369,9 +414,20 @@
               <form action="">
                 <span class="input-wrap">
                   <span class="prefix">$</span>
-                  <input type="text" name="pledge" id="black-edition-pledge" />
+                  <input
+                    type="text"
+                    name="pledge"
+                    class="pledge"
+                    id="mahogany-edition-pledge"
+                    data-product="mahogany-stand"
+                  />
                 </span>
-                <input type="submit" value="Continue" class="btn smallBtn" />
+                <input
+                  type="submit"
+                  value="Continue"
+                  class="btn smallBtn"
+                  data-product="mahogany-stand"
+                />
               </form>
             </div>
           </article>
