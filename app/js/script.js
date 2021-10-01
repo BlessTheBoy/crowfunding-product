@@ -38,6 +38,9 @@ const popupModal = document.querySelector(".popup-modal");
 const successModal = document.querySelector(".success-modal");
 const modalTriggers = document.querySelectorAll(".popup-trigger");
 const modalCloseTrigger = document.querySelector(".popup-modal__close");
+const successModalCloseTrigger = document.querySelector(
+  ".success-modal__close"
+);
 const bodyBlackout = document.querySelector(".body-blackout");
 const cardWrap = document.querySelectorAll(".cardWrap");
 const radios = document.querySelectorAll("input[type='radio']");
@@ -46,11 +49,13 @@ const inputs = document.querySelectorAll(
   ".productForm form input[type='text']"
 );
 
-popupModal
-  .querySelector(".popup-modal__close")
-  .addEventListener("click", () => {
-    closeModal(popupModal);
-  });
+modalCloseTrigger.addEventListener("click", () => {
+  closeModal(popupModal);
+});
+
+successModalCloseTrigger.addEventListener("click", () => {
+  closeModal(successModal);
+});
 
 bodyBlackout.addEventListener("click", () => {
   closeModal();
