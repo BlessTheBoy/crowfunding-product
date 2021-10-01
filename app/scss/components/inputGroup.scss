@@ -18,6 +18,7 @@
 
 input[type="text"] {
   padding: rem(16) rem(22);
+  padding-left: rem(40);
   outline: none;
   border: var(--card-border);
   border-radius: 100px;
@@ -28,6 +29,7 @@ input[type="text"] {
   font-weight: 700;
   line-height: 1.2;
   margin-right: 1rem;
+  font-style: normal;
 
   &:hover,
   &:focus {

@@ -107,9 +107,48 @@
       }
 
       form {
-        display: flex;
+        display: grid;
         align-items: center;
-        justify-content: space-between;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "input button";
+
+        .errorMessage {
+          display: none;
+          grid-area: error;
+          color: red;
+          margin-bottom: rem(6);
+          line-height: 1;
+        }
+        input[type="text"] {
+          grid-area: input;
+        }
+        input[type="submit"] {
+          grid-area: button;
+        }
+
+        &.error {
+          grid-template-areas:
+            "error error"
+            "input button";
+
+          .errorMessage {
+            display: block;
+          }
+          input[type="text"] {
+            border-color: red;
+          }
+          input[type="submit"] {
+            background: #2f2f2f;
+            opacity: 0.5;
+            cursor: not-allowed;
+
+            &:focus,
+            &:hover {
+              background: #2f2f2f;
+            }
+          }
+        }
       }
 
       @include breakpoint(medium) {
