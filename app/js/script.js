@@ -154,15 +154,20 @@ forms.forEach((form) => {
 
     if (pledge) {
       // update donations
-     donationsValue += pledge;
-     backersValue += 1;
+      donationsValue += pledge;
+      backersValue += 1;
 
-     donations.innerText = numberWithCommas(donationsValue);
-     backers.innerText = numberWithCommas(backersValue);
-     progress.value = donationsValue;
+      donations.innerText = numberWithCommas(donationsValue);
+      backers.innerText = numberWithCommas(backersValue);
+      progress.value = donationsValue;
 
       // update amount
-      amont = querySelector()
+      let amount = document.querySelectorAll(`.amount`);
+      amount.forEach((element) => {
+        if (element.dataset.product === form.dataset.product) {
+          element.innerText = Number(element.innerText) - 1;
+        }
+      });
       // update amount left and disable if zero
 
       // Show success modal

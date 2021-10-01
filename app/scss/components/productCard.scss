@@ -6,6 +6,7 @@
 
   &.out-of-stock {
     opacity: 0.5;
+    pointer-events: none;
   }
 
   &-name:not(:last-child) {

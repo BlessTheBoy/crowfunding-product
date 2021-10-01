@@ -136,7 +136,7 @@
           </p>
         </div>
         <ul class="productList">
-          <li class="card productCard">
+          <li class="card productCard" data-product="bamboo-stand">
             <article>
               <header>
                 <h3 class="card__heading productCard-name">Bamboo Stand</h3>
@@ -148,12 +148,15 @@
                 special Backer member list.
               </p>
               <div class="productCard-actions">
-                <p class="productCard-amount"><span>101</span> left</p>
+                <p class="productCard-amount">
+                  <span class="amount" data-product="bamboo-stand">101</span>
+                  left
+                </p>
                 <button>Select Reward</button>
               </div>
             </article>
           </li>
-          <li class="card productCard">
+          <li class="card productCard" data-product="black-stand">
             <article>
               <header>
                 <h3 class="card__heading productCard-name">
@@ -167,12 +170,17 @@
                 is included.
               </p>
               <div class="productCard-actions">
-                <p class="productCard-amount"><span>64</span> left</p>
+                <p class="productCard-amount">
+                  <span class="amount" data-product="black-stand">64</span> left
+                </p>
                 <button>Select Reward</button>
               </div>
             </article>
           </li>
-          <li class="card productCard out-of-stock">
+          <li
+            class="card productCard out-of-stock"
+            data-product="mahogany-stand"
+          >
             <article>
               <header>
                 <h3 class="card__heading productCard-name">
@@ -186,7 +194,10 @@
                 list. Shipping is included.
               </p>
               <div class="productCard-actions">
-                <p class="productCard-amount"><span>0</span> left</p>
+                <p class="productCard-amount">
+                  <span class="amount" data-product="mahogany-stand">0</span>
+                  left
+                </p>
                 <button disabled>Out of Stock</button>
               </div>
             </article>
@@ -300,6 +311,7 @@
             <div class="productForm">
               <p>Enter your pledge</p>
               <form action="" data-product="bamboo-stand">
+                <p class="errorMessage">error message</p>
                 <span class="input-wrap">
                   <span class="prefix">$</span>
                   <input
@@ -356,6 +368,7 @@
             <div class="productForm">
               <p>Enter your pledge</p>
               <form action="" data-product="black-stand">
+                <p class="errorMessage">error message</p>
                 <span class="input-wrap">
                   <span class="prefix">$</span>
                   <input
@@ -413,6 +426,7 @@
             <div class="productForm">
               <p>Enter your pledge</p>
               <form action="" data-product="mahogany-stand">
+                <p class="errorMessage">error message</p>
                 <span class="input-wrap">
                   <span class="prefix">$</span>
                   <input
