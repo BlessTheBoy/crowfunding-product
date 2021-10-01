@@ -41,6 +41,9 @@ const bodyBlackout = document.querySelector(".body-blackout");
 const cardWrap = document.querySelectorAll(".cardWrap");
 const radios = document.querySelectorAll("input[type='radio']");
 const forms = document.querySelectorAll(".productForm form");
+const inputs = document.querySelectorAll(
+  ".productForm form input[type='text']"
+);
 
 modalTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => {
@@ -89,10 +92,7 @@ radios.forEach((radio) =>
 function validatePledge(form, min = 0) {
   // Get children elements
   let input = form.querySelector("input[type='text']");
-  let button = form.querySelector("input[type='submit']");
   let err = form.querySelector(".errorMessage");
-
-  console.log("Validating");
 
   if (input.value === "") {
     form.classList.add("error");
@@ -113,17 +113,31 @@ function validatePledge(form, min = 0) {
   }
 }
 
-forms.forEach((form) =>
+// Defining minimum pledges
+let minPledge = {
+  "no-reward": 0,
+  "bamboo-stand": 25,
+  "black-stand": 75,
+  "mahogany-stand": 200,
+};
+
+forms.forEach((form) => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    console.log("form submitted");
     let form = e.target;
 
     // Validate form input
+    let pledge = validatePledge(form, minPledge[`${form.dataset.product}`]);
 
-    validatePledge(form);
-    // Show success modal
-    // update donations
-  })
-);
+    if (pledge) {
+      // Show success modal
+      // update donations
+
+      console.log(`pledge`, pledge);
+    }
+  });
+  let input = form.querySelector("input[type='text']");
+  input.addEventListener("input", () => {
+    validatePledge(form, minPledge[`${form.dataset.product}`]);
+  });
+});
