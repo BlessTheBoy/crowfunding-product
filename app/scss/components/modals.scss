@@ -6,6 +6,7 @@
   left: 0;
   top: 0;
   width: 100%;
+  height: 1800px;
   background-color: rgba(0, 0, 0, 0.65);
   display: none;
 
@@ -14,18 +15,15 @@
   }
 }
 
-.modal-container {
-  padding-top: rem(121);
-  padding-bottom: rem(121);
-  z-index: 1011;
-  display: none;
-
-  &.is-blacked-out {
-    display: block;
-  }
-}
-
 .popup-modal {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: rem(121);
+  margin-bottom: rem(121);
+  width: calc(100% - 3rem);
+  z-index: 1011;
   opacity: 0;
   pointer-events: none;
   transition: all 300ms ease-in-out;
@@ -132,5 +130,12 @@
       pointer-events: none;
       opacity: 0.5;
     }
+  }
+
+  @include breakpoint(medium) {
+    width: calc(90% - 6rem);
+  }
+  @include breakpoint(medium) {
+    width: 69.3%;
   }
 }
