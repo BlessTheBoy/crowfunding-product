@@ -50,64 +50,87 @@
     li:not(:last-child) {
       margin-bottom: rem(24);
     }
-
-    article {
-      border: var(--card-border);
-      border-radius: var(--card-radius);
-    }
   }
 
-  .productCard {
-    margin-bottom: 0;
-    border: none;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "radio header amount"
-      "description description description";
-    align-items: center;
-    row-gap: rem(24);
-    column-gap: rem(16);
+  .cardWrap {
+    border: var(--card-border);
+    border-radius: var(--card-radius);
 
-    .radio {
-      grid-area: radio;
-    }
-    .head {
-      gap: 1rem;
-      grid-area: header;
+    .productCard {
       margin-bottom: 0;
-      &:hover {
-        h3 {
-          color: var(--moderate-cyan);
-        }
-
-        & ~ .radio > span {
-          border-color: var(--moderate-cyan);
-        }
-      }
-
-      h3 {
-        display: inline-block;
-        cursor: pointer;
-      }
-    }
-    .amount {
-      grid-area: amount;
-    }
-    .description {
-      grid-area: description;
-    }
-  }
-  .productForm {
-    text-align: center;
-    border-top: var(--card-border);
-    padding: rem(24) rem(16);
-
-    form {
-      display: flex;
+      border: none;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "radio header amount"
+        "description description description";
       align-items: center;
-      justify-content: space-between;
+      row-gap: rem(24);
+      column-gap: rem(16);
+
+      .radio {
+        grid-area: radio;
+      }
+      .head {
+        gap: 1rem;
+        grid-area: header;
+        margin-bottom: 0;
+        &:hover {
+          h3 {
+            color: var(--moderate-cyan);
+          }
+
+          & ~ .radio > span {
+            border-color: var(--moderate-cyan);
+          }
+        }
+
+        h3 {
+          display: inline-block;
+          cursor: pointer;
+        }
+      }
+      .amount {
+        grid-area: amount;
+      }
+      .description {
+        grid-area: description;
+      }
+    }
+    .productForm {
+      text-align: center;
+      border-top: var(--card-border);
+      padding: rem(24) rem(16);
+      display: none;
+
+      p {
+        margin-bottom: rem(16);
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      @include breakpoint(medium) {
+        padding: rem(24);
+      }
+    }
+
+    &.checked {
+      border-color: var(--moderate-cyan);
+      border-width: 2px;
+
+      .productForm {
+        display: block;
+      }
+    }
+
+    &.out-of-stock {
+      pointer-events: none;
+      opacity: 0.5;
     }
   }
 }
