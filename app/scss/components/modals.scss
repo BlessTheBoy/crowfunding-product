@@ -15,7 +15,7 @@
   }
 }
 
-.popup-modal {
+.modal {
   position: absolute;
   top: 0;
   left: 50%;
@@ -36,7 +36,9 @@
   &__close {
     cursor: pointer;
   }
+}
 
+.popup-modal {
   > header {
     display: flex;
     justify-content: space-between;
@@ -177,4 +179,9 @@
   @include breakpoint(medium) {
     width: 69.3%;
   }
+}
+
+.success-modal {
+  margin-top: rem(143);
+  margin-bottom: rem(143);
 }

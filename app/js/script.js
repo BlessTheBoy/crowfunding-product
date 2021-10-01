@@ -34,7 +34,8 @@ function addBookmark() {
 }
 
 // Modals
-const modal = document.querySelector(".popup-modal");
+const popupModal = document.querySelector(".popup-modal");
+const successModal = document.querySelector(".success-modal");
 const modalTriggers = document.querySelectorAll(".popup-trigger");
 const modalCloseTrigger = document.querySelector(".popup-modal__close");
 const bodyBlackout = document.querySelector(".body-blackout");
@@ -45,32 +46,39 @@ const inputs = document.querySelectorAll(
   ".productForm form input[type='text']"
 );
 
+popupModal
+  .querySelector(".popup-modal__close")
+  .addEventListener("click", () => {
+    closeModal(popupModal);
+  });
+
+bodyBlackout.addEventListener("click", () => {
+  closeModal();
+});
+
+// Close modal
+function closeModal(modal) {
+  // Remove all error messages and inputs
+
+  if (modal) {
+    modal.classList.remove("is--visible");
+  } else {
+    popupModal.classList.remove("is--visible");
+    successModal.classList.remove("is--visible");
+  }
+  bodyBlackout.classList.remove("is-blacked-out");
+}
+
+// Open modal
+function openModal(modal, product = null) {
+  modal.classList.add("is--visible");
+  bodyBlackout.classList.add("is-blacked-out");
+}
+
 modalTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => {
-    const { popupTrigger } = trigger.dataset;
-    const popupModal = document.querySelector(
-      `[data-popup-modal="${popupTrigger}"]`
-    );
-
-    function closeModal() {
-      // Remove all error messages and inputs
-
-      popupModal.classList.remove("is--visible");
-      bodyBlackout.classList.remove("is-blacked-out");
-    }
-
-    popupModal.classList.add("is--visible");
-    bodyBlackout.classList.add("is-blacked-out");
-
-    popupModal
-      .querySelector(".popup-modal__close")
-      .addEventListener("click", () => {
-        closeModal();
-      });
-
-    bodyBlackout.addEventListener("click", () => {
-      closeModal();
-    });
+    const { product } = trigger.dataset;
+    openModal(popupModal, product);
   });
 });
 
@@ -131,7 +139,11 @@ forms.forEach((form) => {
 
     if (pledge) {
       // Show success modal
+      closeModal(popupModal);
+      openModal(successModal);
+
       // update donations
+      // select on header click
 
       console.log(`pledge`, pledge);
     }
