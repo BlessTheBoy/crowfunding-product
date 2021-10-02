@@ -20,6 +20,7 @@ const successModalCloseTrigger = document.querySelector(
 );
 const bodyBlackout = document.querySelector(".body-blackout");
 const cardWrap = document.querySelectorAll(".cardWrap");
+const pledgeForms = document.querySelectorAll(".cardWrap form");
 const modalHeader = document.querySelectorAll(".cardWrap .head");
 const radios = document.querySelectorAll("input[type='radio']");
 const forms = document.querySelectorAll(".productForm form");
@@ -209,6 +210,20 @@ function closeModal(modal) {
     successModal.classList.remove("is--visible");
   }
   bodyBlackout.classList.remove("is-blacked-out");
+
+  // remove all selections
+  radios.forEach((radio) => {
+    radio.checked = false;
+  });
+  updateSelection();
+
+  // Clear all inputs and error
+  inputs.forEach((input) => {
+    input.value = "";
+  });
+  pledgeForms.forEach((form) => {
+    form.classList.remove("error");
+  });
 }
 
 // Open modal function
@@ -220,7 +235,7 @@ function openModal(modal, product = null) {
 // Funtion to update selected product on modal
 function updateSelection(product) {
   cardWrap.forEach((card) => {
-    if (card.dataset.product == product) {
+    if (product && card.dataset.product == product) {
       card.classList.add("checked");
 
       // autofocus input
@@ -269,10 +284,6 @@ updateAmounts();
 // Confirm script is connected
 console.log("script loaded");
 
-// select on header click
-
 // Open modal already selected
 
 // Remove all error messages and inputs on modal close
-
-// product amount tracking
