@@ -16,6 +16,10 @@ button,
   align-items: center;
   cursor: pointer;
 
+  @include breakpoint-down(xsmall) {
+    padding: em(18) em(30);
+  }
+
   &.smallBtn {
     font-size: rem(14);
   }

@@ -159,6 +159,10 @@
             &:hover {
               background: #2f2f2f;
             }
+
+            @include breakpoint-down(small) {
+              padding: em(18) em(34);
+            }
           }
         }
       }
