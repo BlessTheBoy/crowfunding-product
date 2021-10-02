@@ -20,6 +20,7 @@ const successModalCloseTrigger = document.querySelector(
 );
 const bodyBlackout = document.querySelector(".body-blackout");
 const cardWrap = document.querySelectorAll(".cardWrap");
+const modalHeader = document.querySelectorAll(".cardWrap .head");
 const radios = document.querySelectorAll("input[type='radio']");
 const forms = document.querySelectorAll(".productForm form");
 const inputs = document.querySelectorAll(
@@ -101,19 +102,17 @@ modalTriggers.forEach((trigger) => {
 
 // Update selected product to match selected radio button
 radios.forEach((radio) =>
-  radio.addEventListener("change", () => {
-    cardWrap.forEach((card) => {
-      if (card.dataset.product == radio.dataset.product) {
-        card.classList.add("checked");
-
-        // autofocus input
-        card.querySelector("input[type='text']").focus();
-      } else {
-        card.classList.remove("checked");
-      }
-    });
-  })
+  radio.addEventListener("input", () => updateSelection(radio.dataset.product))
 );
+
+// select product and check radio on header click
+modalHeader.forEach((header) => {
+  header.addEventListener("click", () => {
+    let radio = header.nextElementSibling.querySelector("input[type='radio']");
+    radio.checked = true;
+    updateSelection(radio.dataset.product);
+  });
+});
 
 // Handle pledge submission, validation and updating amounts
 forms.forEach((form) => {
@@ -218,6 +217,20 @@ function openModal(modal, product = null) {
   bodyBlackout.classList.add("is-blacked-out");
 }
 
+// Funtion to update selected product on modal
+function updateSelection(product) {
+  cardWrap.forEach((card) => {
+    if (card.dataset.product == product) {
+      card.classList.add("checked");
+
+      // autofocus input
+      card.querySelector("input[type='text']").focus();
+    } else {
+      card.classList.remove("checked");
+    }
+  });
+}
+
 // Function to validate pledge amount
 function validatePledge(form, min = 0) {
   // Get children elements
@@ -255,7 +268,6 @@ updateAmounts();
 
 // Confirm script is connected
 console.log("script loaded");
-// console.log(products[`no-reward`].minPledge);
 
 // select on header click
 
