@@ -96,7 +96,7 @@ bodyBlackout.addEventListener("click", () => {
 // Open modal when triggers are clicked
 modalTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => {
-    const { product } = trigger.dataset;
+    const product = trigger.dataset.popupTrigger;
     openModal(popupModal, product);
   });
 });
@@ -212,22 +212,14 @@ function closeModal(modal) {
   bodyBlackout.classList.remove("is-blacked-out");
 
   // remove all selections
-  radios.forEach((radio) => {
-    radio.checked = false;
-  });
   updateSelection();
-
-  // Clear all inputs and error
-  inputs.forEach((input) => {
-    input.value = "";
-  });
-  pledgeForms.forEach((form) => {
-    form.classList.remove("error");
-  });
 }
 
 // Open modal function
-function openModal(modal, product = null) {
+function openModal(modal, product) {
+  if (product) {
+    updateSelection(product);
+  }
   modal.classList.add("is--visible");
   bodyBlackout.classList.add("is-blacked-out");
 }
@@ -236,12 +228,18 @@ function openModal(modal, product = null) {
 function updateSelection(product) {
   cardWrap.forEach((card) => {
     if (product && card.dataset.product == product) {
+      // Check card
       card.classList.add("checked");
+      card.querySelector("input[type='radio']").checked = true;
 
       // autofocus input
       card.querySelector("input[type='text']").focus();
     } else {
+      // Uncheck card, clear inputs and clear errors
       card.classList.remove("checked");
+      card.querySelector("input[type='radio']").checked = false;
+      card.querySelector("input[type='text']").value = "";
+      card.querySelector("form").classList.remove("error");
     }
   });
 }
@@ -283,7 +281,3 @@ updateAmounts();
 
 // Confirm script is connected
 console.log("script loaded");
-
-// Open modal already selected
-
-// Remove all error messages and inputs on modal close

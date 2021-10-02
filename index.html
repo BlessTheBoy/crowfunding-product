@@ -86,10 +86,8 @@
           A beautiful & handcrafted monitor stand to reduce neck and eye strain.
         </p>
         <div class="button-cont">
-          <button class="btn popup-trigger" data-popup-trigger="one">
-            Back this project
-          </button>
-          <button class="btn bookmarkBtn" id="bookmarkBtn">
+          <button class="popup-trigger">Back this project</button>
+          <button class="bookmarkBtn" id="bookmarkBtn">
             <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
               <g fill="none" fill-rule="evenodd">
                 <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
@@ -152,7 +150,9 @@
                   <span class="amount" data-product="bamboo-stand">101</span>
                   left
                 </p>
-                <button>Select Reward</button>
+                <button class="popup-trigger" data-popup-trigger="bamboo-stand">
+                  Select Reward
+                </button>
               </div>
             </article>
           </li>
@@ -173,7 +173,9 @@
                 <p class="productCard-amount">
                   <span class="amount" data-product="black-stand">64</span> left
                 </p>
-                <button>Select Reward</button>
+                <button class="popup-trigger" data-popup-trigger="black-stand">
+                  Select Reward
+                </button>
               </div>
             </article>
           </li>
@@ -198,7 +200,13 @@
                   <span class="amount" data-product="mahogany-stand">0</span>
                   left
                 </p>
-                <button disabled>Out of Stock</button>
+                <button
+                  disabled
+                  class="popup-trigger"
+                  data-popup-trigger="mahogany-stand"
+                >
+                  Out of Stock
+                </button>
               </div>
             </article>
           </li>
