@@ -145,12 +145,13 @@ let minPledge = {
 };
 
 forms.forEach((form) => {
+  let product = form.dataset.product;
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     let form = e.target;
 
     // Validate form input
-    let pledge = validatePledge(form, minPledge[`${form.dataset.product}`]);
+    let pledge = validatePledge(form, minPledge[`${product}`]);
 
     if (pledge) {
       // update donations
@@ -164,8 +165,24 @@ forms.forEach((form) => {
       // update amount
       let amount = document.querySelectorAll(`.amount`);
       amount.forEach((element) => {
-        if (element.dataset.product === form.dataset.product) {
-          element.innerText = Number(element.innerText) - 1;
+        if (element.dataset.product === product) {
+          let updatedAmount = Number(element.innerText) - 1;
+
+          if (updatedAmount === 0) {
+            document
+              .querySelectorAll(`.card[data-product=${product}]`)
+              .forEach((card) => {
+                card.classList.add("out-of-stock");
+                let button = card.querySelector("button");
+                button.disabled = true;
+                button.innerText = "Out of Stock";
+              });
+            document
+              .querySelectorAll(`.cardWrap[data-product=${product}]`)
+              .forEach((card) => card.classList.add("out-of-stock"));
+          }
+
+          element.innerText = updatedAmount;
         }
       });
       // update amount left and disable if zero
@@ -182,7 +199,7 @@ forms.forEach((form) => {
   });
   let input = form.querySelector("input[type='text']");
   input.addEventListener("input", () => {
-    validatePledge(form, minPledge[`${form.dataset.product}`]);
+    validatePledge(form, minPledge[`${product}`]);
   });
 });
 
