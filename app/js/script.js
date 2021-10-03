@@ -11,6 +11,7 @@ const nav = document.getElementById("nav");
 const bookmarkBtn = document.getElementById("bookmarkBtn");
 
 // For modals
+const main = document.querySelector("#mainContent");
 const popupModal = document.querySelector(".popup-modal");
 const successModal = document.querySelector(".success-modal");
 const modalTriggers = document.querySelectorAll(".popup-trigger");
@@ -210,6 +211,7 @@ function closeModal(modal) {
     successModal.classList.remove("is--visible");
   }
   bodyBlackout.classList.remove("is-blacked-out");
+  main.classList.remove("modal-opened");
 
   // remove all selections
   updateSelection();
@@ -222,6 +224,7 @@ function openModal(modal, product) {
   }
   modal.classList.add("is--visible");
   bodyBlackout.classList.add("is-blacked-out");
+  main.classList.add("modal-opened");
 }
 
 // Funtion to update selected product on modal

@@ -1,17 +1,24 @@
 @use "../util" as *;
 
-.body-blackout {
+#mainContent.modal-opened {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.body-blackout {
+  position: relative;
   z-index: 1010;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 1800px;
   background-color: rgba(0, 0, 0, 0.65);
-  display: none;
+  // display: none;
 
   &.is-blacked-out {
-    display: block;
+    width: 100%;
+    height: 1800px;
   }
 }
 
