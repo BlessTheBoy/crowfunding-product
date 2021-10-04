@@ -210,6 +210,8 @@ function closeModal(modal) {
     popupModal.classList.remove("is--visible");
     successModal.classList.remove("is--visible");
   }
+  bodyBlackout.classList.remove("success");
+  main.classList.remove("success");
   bodyBlackout.classList.remove("is-blacked-out");
   main.classList.remove("modal-opened");
 
@@ -225,6 +227,10 @@ function openModal(modal, product) {
   modal.classList.add("is--visible");
   bodyBlackout.classList.add("is-blacked-out");
   main.classList.add("modal-opened");
+  if (modal.dataset.popupModal === "success") {
+    bodyBlackout.classList.add("success");
+    main.classList.add("success");
+  }
 }
 
 // Funtion to update selected product on modal
