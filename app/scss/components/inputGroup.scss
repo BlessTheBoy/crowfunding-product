@@ -1,8 +1,9 @@
 @use "../util" as *;
 
 .input-wrap {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: flex-start;
 
   .prefix {
     position: absolute;

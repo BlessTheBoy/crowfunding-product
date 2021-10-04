@@ -15,13 +15,22 @@
   }
 }
 
+// body.modal-opened {
+//   height: rem(1800);
+//   overflow: hidden;
+
+//   &.success {
+//     height: 100vh;
+//     min-height: rem(600);
+//   }
+// }
+
 .body-blackout {
   position: relative;
   z-index: 1010;
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.65);
-  // display: none;
 
   &.is-blacked-out {
     width: 100%;
@@ -140,7 +149,7 @@
       form {
         display: grid;
         align-items: center;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr auto;
         grid-template-rows: auto;
         grid-template-areas: "input button";
 
@@ -189,11 +198,6 @@
       @include breakpoint(medium) {
         padding: rem(24);
       }
-      @include breakpoint(large) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
     }
 
     &.checked {
@@ -202,6 +206,16 @@
 
       .productForm {
         display: block;
+
+        @include breakpoint(large) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p:first-child {
+            margin-bottom: 0;
+          }
+        }
       }
     }
 
@@ -239,5 +253,9 @@
   }
   button {
     align-self: center;
+
+    &:focus {
+      border: none;
+    }
   }
 }

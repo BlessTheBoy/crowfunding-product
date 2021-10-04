@@ -229,7 +229,9 @@ function openModal(modal, product) {
   main.classList.add("modal-opened");
   if (modal.dataset.popupModal === "success") {
     bodyBlackout.classList.add("success");
+    bodyBlackout.scrollTop = 0;
     main.classList.add("success");
+    modal.querySelector("button").focus();
   }
 }
 
