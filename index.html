@@ -35,6 +35,7 @@
     />
 
     <!-- Main script -->
+    <script defer src="dist/microModal.js"></script>
     <script defer src="dist/script.js"></script>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -102,7 +103,7 @@
             height="56"
           />
           <header>
-            <h1 class="title card__heading">
+            <h1 class="title card__heading" data-micromodal-trigger="modal-1">
               Mastercraft Bamboo Monitor Riser
             </h1>
           </header>
@@ -540,6 +541,31 @@
 
     <!-- Micro modal -->
     <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div
+          class="modal__container card success-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="success-modal-title"
+        >
+         <img src="images/icon-check.svg" alt="" width="64" height="64" />
+      <header>
+        <h2 class="card__heading" id="success-modal-title">Thanks for your support!</h2>
+      </header>
+      <p>
+        Your pledge brings us one step closer to sharing Mastercraft Bamboo
+        Monitor Riser worldwide. You will get an email once our campaign is
+        completed.
+      </p>
+      <button class="success-modal__close" aria-label="Close modal"
+              data-micromodal-close>Got it!</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+    <!-- Micro modal -->
+    <div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
       <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div
           class="modal__container"

@@ -292,3 +292,5 @@ updateAmounts();
 
 // Confirm script is connected
 console.log("script loaded");
+
+
