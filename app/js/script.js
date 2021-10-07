@@ -41,7 +41,7 @@ let backersValue = 5007;
 // Defining amount of products left and minimum pledges for products
 let products = {
   "no-reward": { amount: null, minPledge: 0 },
-  "bamboo-stand": { amount: 101, minPledge: 25 },
+  "bamboo-stand": { amount: 1, minPledge: 25 },
   "black-stand": { amount: 64, minPledge: 75 },
   "mahogany-stand": { amount: 0, minPledge: 200 },
 };
@@ -207,9 +207,12 @@ function updateAmounts(product) {
               button.disabled = true;
               button.innerText = "Out of Stock";
             });
-          document
-            .querySelectorAll(`.cardWrap[data-product=${product}]`)
-            .forEach((card) => card.classList.add("out-of-stock"));
+          let wrap = document.querySelector(
+            `.cardWrap[data-product=${product}]`
+          );
+          wrap.classList.add("out-of-stock");
+          wrap.tabIndex = "-1";
+          wrap.querySelector("input[type='radio']").tabIndex = "-1";
         }
 
         element.innerText = products[`${product}`].amount;
@@ -229,7 +232,11 @@ function updateAmounts(product) {
           });
         document
           .querySelectorAll(`.cardWrap[data-product=${product}]`)
-          .forEach((card) => card.classList.add("out-of-stock"));
+          .forEach((card) => {
+            card.classList.add("out-of-stock");
+            card.tabIndex = "-1";
+            card.querySelector("input[type='radio']").tabIndex = "-1";
+          });
       }
 
       element.innerText = products[`${element.dataset.product}`].amount;
