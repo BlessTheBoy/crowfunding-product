@@ -1,73 +1,56 @@
 @use "../util" as *;
 
-#mainContent.modal-opened {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  height: rem(1800);
-  overflow: hidden;
+// #mainContent.modal-opened {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: 1;
+//   height: rem(1800);
+//   overflow: hidden;
 
-  &.success {
-    height: 100vh;
-    min-height: rem(600);
-  }
-}
+//   &.success {
+//     height: 100vh;
+//     min-height: rem(600);
+//   }
+// }
 
-.body-blackout {
-  position: relative;
-  z-index: 1010;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.65);
+// .body-blackout {
+//   position: relative;
+//   z-index: 1010;
+//   left: 0;
+//   top: 0;
+//   background-color: rgba(0, 0, 0, 0.65);
 
-  &.is-blacked-out {
-    width: 100%;
-    height: rem(1800);
+//   &.is-blacked-out {
+//     width: 100%;
+//     height: rem(1800);
 
-    &.success {
-      height: 100vh;
-      min-height: rem(600);
-    }
-  }
-}
+//     &.success {
+//       height: 100vh;
+//       min-height: rem(600);
+//     }
+//   }
+// }
 
-.modal {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: rem(121);
-  margin-bottom: rem(121);
-  width: calc(100% - 3rem);
-  z-index: 1011;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 300ms ease-in-out;
-
-  &.is--visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  &__close {
-    cursor: pointer;
-  }
-}
+// .modal__container {
+//   margin-top: rem(121);
+//   margin-bottom: rem(121);
+//   width: calc(100% - 3rem);
+// }
 
 .popup-modal {
+  // margin-top: rem(121);
+  // margin-bottom: rem(121);
+  max-height: calc(100vh - 121px);
+  padding-bottom: 5rem;
   > header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  ul {
-    list-style: none;
-
-    li:not(:last-child) {
-      margin-bottom: rem(24);
-    }
+  .reward-list article:not(:last-child) {
+    margin-bottom: rem(24);
   }
 
   .cardWrap {
@@ -214,21 +197,9 @@
       opacity: 0.5;
     }
   }
-
-  @include breakpoint(medium) {
-    width: calc(90% - 6rem);
-  }
-  @include breakpoint(medium) {
-    width: 69.3%;
-  }
 }
 
 .success-modal {
-  margin-top: 0;
-  margin-bottom: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding-top: rem(32);
   text-align: center;
   display: flex;

@@ -36,7 +36,7 @@
 
     <!-- Main script -->
     <script defer src="dist/microModal.js"></script>
-    <script defer src="dist/script.js"></script>
+    <!-- <script defer src="dist/script.js"></script> -->
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
@@ -103,7 +103,7 @@
             height="56"
           />
           <header>
-            <h1 class="title card__heading" data-micromodal-trigger="modal-1">
+            <h1 class="title card__heading" data-micromodal-trigger="selection-modal">
               Mastercraft Bamboo Monitor Riser
             </h1>
           </header>
@@ -525,8 +525,279 @@
       </ul>
     </section>
 
+    <!-- Micro modal -->
+    <div class="modal micromodal-slide" id="selection-modal" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div
+          class="modal__container card popup-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="selection-modal-title"
+        >
+          <header>
+        <h2 class="card__heading" id="selection-modal-title">Back this project</h2>
+        <button>
+          <img
+          src="images/icon-close-modal.svg"
+          alt="close modal"
+          class="popup-modal__close"
+          width="15"
+          height="15"
+              aria-label="Close modal"
+              data-micromodal-close
+        />
+        </button>
+      </header>
+      <p>
+        Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
+        the world?
+      </p>
+      <div class="reward-list">
+        <article class="cardWrap" data-product="no-reward">
+            <div class="card productCard">
+              <header class="head">
+                <h3 class="card__heading productCard-name" id="no-reward-head">
+                  Pledge with no reward
+                </h3>
+              </header>
+              <span class="radio">
+                <input
+                  type="radio"
+                  name="product"
+                  id="no-reward"
+                  value="no-reward"
+                  data-product="no-reward"
+                  aria-labelledby="no-reward-head"
+                  tabindex="0"
+                />
+                <span></span>
+              </span>
+              <div class="description">
+                <p>
+                  Choose to support us without a reward if you simply believe in
+                  our project. As a backer, you will be signed up to receive
+                  product updates via email.
+                </p>
+              </div>
+            </div>
+            <div class="productForm">
+              <p>Enter your pledge</p>
+              <form autocomplete="off" action="" data-product="no-reward">
+                <p class="errorMessage">error message</p>
+                <span class="input-wrap">
+                  <span class="prefix">$</span>
+                  <input
+                    type="text"
+                    name="pledge"
+                    class="pledge"
+                    id="no-reward-pledge"
+                    data-product="no-reward"
+                    aria-label="input pledge for no reward"
+                  />
+                </span>
+                <input
+                  type="submit"
+                  value="Continue"
+                  class="btn smallBtn"
+                  data-product="no-reward"
+                  aria-label="submit pledge"
+                />
+              </form>
+            </div>
+          </article>
+        <article class="cardWrap" data-product="bamboo-stand" tabindex="0">
+            <div class="card productCard">
+              <header class="head">
+                <h3
+                  class="card__heading productCard-name"
+                  id="bamboo-stand-head"
+                >
+                  Bamboo Stand
+                </h3>
+                <p class="card__subHeading">Pledge $25 or more</p>
+              </header>
+              <span class="radio">
+                <input
+                  type="radio"
+                  name="product"
+                  id="bamboo-stand"
+                  value="bamboo-stand"
+                  data-product="bamboo-stand"
+                  aria-labelledby="bamboo-stand-head"
+                />
+                <span></span>
+              </span>
+              <p class="productCard-amount large amount-wrap">
+                <span class="amount" data-product="bamboo-stand">101</span> left
+              </p>
+              <div class="description">
+                <p>
+                  You get an ergonomic stand made of natural bamboo. You've
+                  helped us launch our promotional campaign, and you’ll be added
+                  to a special Backer member list.
+                </p>
+                <p class="productCard-amount medium">
+                  <span class="amount" data-product="bamboo-stand">101</span>
+                  left
+                </p>
+              </div>
+            </div>
+            <div class="productForm">
+              <p>Enter your pledge</p>
+              <form autocomplete="off" action="" data-product="bamboo-stand">
+                <p class="errorMessage">error message</p>
+                <span class="input-wrap">
+                  <span class="prefix">$</span>
+                  <input
+                    type="text"
+                    name="pledge"
+                    class="pledge"
+                    id="bamboo-stand-pledge"
+                    data-product="bamboo-stand"
+                    aria-label="input pledge for Bamboo stand"
+                  />
+                </span>
+                <input
+                  type="submit"
+                  value="Continue"
+                  class="btn smallBtn"
+                  data-product="bamboo-stand"
+                  aria-label="submit pledge"
+                />
+              </form>
+            </div>
+          </article>
+         <article class="cardWrap" data-product="black-stand">
+            <div class="card productCard">
+              <header class="head">
+                <h3
+                  class="card__heading productCard-name"
+                  id="black-stand-head"
+                >
+                  Black Edition Stand
+                </h3>
+                <p class="card__subHeading">Pledge $75 or more</p>
+              </header>
+              <span class="radio">
+                <input
+                  type="radio"
+                  name="product"
+                  id="black-edition"
+                  value="black-edition"
+                  data-product="black-stand"
+                  aria-labelledby="black-stand-head"
+                />
+                <span></span>
+              </span>
+              <p class="productCard-amount large amount-wrap">
+                <span class="amount" data-product="black-stand">64</span> left
+              </p>
+              <div class="description">
+                <p>
+                  You get a Black Special Edition computer stand and a personal
+                  thank you. You’ll be added to our Backer member list. Shipping
+                  is included.
+                </p>
+                <p class="productCard-amount medium">
+                  <span class="amount" data-product="black-stand">64</span> left
+                </p>
+              </div>
+            </div>
+            <div class="productForm">
+              <p>Enter your pledge</p>
+              <form autocomplete="off" action="" data-product="black-stand">
+                <p class="errorMessage">error message</p>
+                <span class="input-wrap">
+                  <span class="prefix">$</span>
+                  <input
+                    type="text"
+                    name="pledge"
+                    class="pledge"
+                    id="black-edition-pledge"
+                    data-product="black-stand"
+                    aria-label="input pledge for Black Edition stand"
+                  />
+                </span>
+                <input
+                  type="submit"
+                  value="Continue"
+                  class="btn smallBtn"
+                  data-product="black-stand"
+                  aria-label="submit pledge"
+                />
+              </form>
+            </div>
+          </article>
+        <article class="cardWrap out-of-stock" data-product="mahogany-stand">
+            <div class="card productCard">
+              <header class="head">
+                <h3
+                  class="card__heading productCard-name"
+                  id="mahogany-stand-head"
+                >
+                  Mahogany Special Edition
+                </h3>
+                <p class="card__subHeading">Pledge $200 or more</p>
+              </header>
+              <span class="radio">
+                <input
+                  type="radio"
+                  name="product"
+                  id="mahogany-edition"
+                  value="mahogany-edition"
+                  data-product="mahogany-stand"
+                  aria-labelledby="mahogany-stand-head"
+                />
+                <span></span>
+              </span>
+              <p class="productCard-amount large amount-wrap">
+                <span class="amount" data-product="mahogany-stand">0</span> left
+              </p>
+              <div class="description">
+                <p>
+                  You get two Special Edition Mahogany stands, a Backer T-Shirt,
+                  and a personal thank you. You’ll be added to our Backer member
+                  list. Shipping is included.
+                </p>
+                <p class="productCard-amount medium">
+                  <span class="amount" data-product="mahogany-stand">0</span>
+                  left
+                </p>
+              </div>
+            </div>
+            <div class="productForm">
+              <p>Enter your pledge</p>
+              <form autocomplete="off" action="" data-product="mahogany-stand">
+                <p class="errorMessage">error message</p>
+                <span class="input-wrap">
+                  <span class="prefix">$</span>
+                  <input
+                    type="text"
+                    name="pledge"
+                    class="pledge"
+                    id="mahogany-edition-pledge"
+                    data-product="mahogany-stand"
+                    aria-label="input pledge for Special Edition Mahogany stand"
+                  />
+                </span>
+                <input
+                  type="submit"
+                  value="Continue"
+                  class="btn smallBtn"
+                  data-product="mahogany-stand"
+                  aria-label="submit pledge"
+                />
+              </form>
+            </div>
+          </article>
+      </div>
+      <button>Close modal</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Success modal -->
-    <section class="card modal success-modal" data-popup-modal="success">
+    <!-- <section class="card modal success-modal" data-popup-modal="success">
       <img src="images/icon-check.svg" alt="" width="64" height="64" />
       <header>
         <h2 class="card__heading">Thanks for your support!</h2>
@@ -537,10 +808,10 @@
         completed.
       </p>
       <button class="success-modal__close">Got it!</button>
-    </section>
+    </section> -->
 
-    <!-- Micro modal -->
-    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <!-- Success modal -->
+    <div class="modal micromodal-slide" id="success-modal" aria-hidden="true">
       <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div
           class="modal__container card success-modal"

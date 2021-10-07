@@ -1,3 +1,5 @@
+@use "../util" as *;
+
 /**************************\
   Basic Modal Styles
 \**************************/
@@ -12,16 +14,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .modal__container {
-  background-color: #fff;
-  padding: 30px;
-  max-width: 500px;
-  max-height: 100vh;
-  border-radius: 4px;
+  width: calc(100% - 3rem);
   overflow-y: auto;
-  box-sizing: border-box;
+
+  @include breakpoint(medium) {
+    width: calc(90% - 6rem);
+  }
+  @include breakpoint(medium) {
+    width: 69.3%;
+  }
 }
 
 /**************************\
