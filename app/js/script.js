@@ -1,6 +1,7 @@
 /***************************
 Dom references
 ***************************/
+
 // For nav
 const openMenuBtn = document.getElementById("burger");
 const closeMenuBtn = document.getElementById("closeMenu");
@@ -41,7 +42,7 @@ let backersValue = 5007;
 // Defining amount of products left and minimum pledges for products
 let products = {
   "no-reward": { amount: null, minPledge: 0 },
-  "bamboo-stand": { amount: 1, minPledge: 25 },
+  "bamboo-stand": { amount: 101, minPledge: 25 },
   "black-stand": { amount: 64, minPledge: 75 },
   "mahogany-stand": { amount: 0, minPledge: 200 },
 };
@@ -110,12 +111,12 @@ MicroModal.init({
 // });
 
 // Open modal when triggers are clicked
-// modalTriggers.forEach((trigger) => {
-//   trigger.addEventListener("click", () => {
-//     const product = trigger.dataset.popupTrigger;
-//     openModal(popupModal, product);
-//   });
-// });
+modalTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const product = trigger.dataset.popupTrigger;
+    openModal(product);
+  });
+});
 
 // Closing selection modal and selecting card with keyboard
 modalCloseTrigger.addEventListener("keypress", triggerClick);
@@ -266,18 +267,14 @@ function updateAmounts(product) {
 // }
 
 // Open modal function
-function openModal(modal, product) {
+function openModal(product) {
+  MicroModal.show("selection-modal");
+
   if (product) {
     updateSelection(product);
-  }
-  modal.classList.add("is--visible");
-  bodyBlackout.classList.add("is-blacked-out");
-  main.classList.add("modal-opened");
-  if (modal.dataset.popupModal === "success") {
-    bodyBlackout.classList.add("success");
-    // bodyBlackout.scrollBottom = 0;
-    main.classList.add("success");
-    modal.querySelector("button").focus();
+    popupModal
+      .querySelector(`.cardWrap[data-product=${product}] input[type='text']`)
+      .focus();
   }
 }
 
