@@ -36,7 +36,7 @@
 
     <!-- Main script -->
     <script defer src="dist/microModal.js"></script>
-    <!-- <script defer src="dist/script.js"></script> -->
+    <script defer src="dist/script.js"></script>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
@@ -262,7 +262,7 @@
     <!-- Modals -->
 
     <!-- Product selection modal -->
-    <section class="card modal popup-modal" data-popup-modal="product">
+    <!-- <section class="card modal popup-modal" data-popup-modal="product">
       <header>
         <h2 class="card__heading">Back this project</h2>
         <img
@@ -523,7 +523,7 @@
           </article>
         </li>
       </ul>
-    </section>
+    </section> -->
 
     <!-- Micro modal -->
     <div class="modal micromodal-slide" id="selection-modal" aria-hidden="true">
@@ -536,8 +536,7 @@
         >
           <header>
         <h2 class="card__heading" id="selection-modal-title">Back this project</h2>
-        <button>
-          <img
+        <img
           src="images/icon-close-modal.svg"
           alt="close modal"
           class="popup-modal__close"
@@ -545,15 +544,15 @@
           height="15"
               aria-label="Close modal"
               data-micromodal-close
+              tabindex="0"
         />
-        </button>
       </header>
       <p>
         Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
         the world?
       </p>
       <div class="reward-list">
-        <article class="cardWrap" data-product="no-reward">
+        <article class="cardWrap" data-product="no-reward" tabindex="0">
             <div class="card productCard">
               <header class="head">
                 <h3 class="card__heading productCard-name" id="no-reward-head">
@@ -568,7 +567,7 @@
                   value="no-reward"
                   data-product="no-reward"
                   aria-labelledby="no-reward-head"
-                  tabindex="0"
+                  tabindex="-1"
                 />
                 <span></span>
               </span>
@@ -623,7 +622,8 @@
                   id="bamboo-stand"
                   value="bamboo-stand"
                   data-product="bamboo-stand"
-                  aria-labelledby="bamboo-stand-head"
+                  aria-labelledby="bamboo-stand-head"                  
+                  tabindex="-1"
                 />
                 <span></span>
               </span>
@@ -667,7 +667,7 @@
               </form>
             </div>
           </article>
-         <article class="cardWrap" data-product="black-stand">
+         <article class="cardWrap" data-product="black-stand" tabindex="0">
             <div class="card productCard">
               <header class="head">
                 <h3
@@ -686,6 +686,7 @@
                   value="black-edition"
                   data-product="black-stand"
                   aria-labelledby="black-stand-head"
+                  tabindex="-1"
                 />
                 <span></span>
               </span>
@@ -728,7 +729,7 @@
               </form>
             </div>
           </article>
-        <article class="cardWrap out-of-stock" data-product="mahogany-stand">
+        <article class="cardWrap out-of-stock" data-product="mahogany-stand" tabindex="-1">
             <div class="card productCard">
               <header class="head">
                 <h3
@@ -747,6 +748,7 @@
                   value="mahogany-edition"
                   data-product="mahogany-stand"
                   aria-labelledby="mahogany-stand-head"
+                  tabindex="-1"
                 />
                 <span></span>
               </span>

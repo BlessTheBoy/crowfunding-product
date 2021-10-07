@@ -48,6 +48,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    img {
+      box-sizing: content-box;
+      padding: 3px;
+
+      &:focus {
+        border: 1px solid var(--moderate-cyan);
+        outline: none !important;
+      }
+    }
   }
   .reward-list article:not(:last-child) {
     margin-bottom: rem(24);
@@ -56,6 +66,19 @@
   .cardWrap {
     border: var(--card-border);
     border-radius: var(--card-radius);
+
+    &:focus {
+      border-color: var(--moderate-cyan);
+      border-width: 2px;
+      outline: none !important;
+      -webkit-tap-highlight-color: var(--moderate-cyan);
+      -webkit-tap-highlight-color: transparent;
+
+      input[type="radio"] + span {
+        // box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em var(--moderate-cyan);
+        border-color: var(--moderate-cyan);
+      }
+    }
 
     .productCard {
       margin-bottom: 0;

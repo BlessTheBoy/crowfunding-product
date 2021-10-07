@@ -52,6 +52,27 @@ Navbar Logic
 openMenuBtn.addEventListener("click", openMenu);
 closeMenuBtn.addEventListener("click", closeMenu);
 
+modalCloseTrigger.addEventListener("keypress", triggerClick);
+cardWrap.forEach(card => {card.addEventListener("keypress", selectCard)})
+
+function triggerClick(e) {
+  let keycode = e.keyCode ? e.keyCode : e.which;
+  if (keycode == "13") {
+    var caller = e.target || e.srcElement;
+    caller.click();
+  }
+}
+function selectCard(e) {
+  let keycode = e.keyCode ? e.keyCode : e.which;
+  console.log("Enter clicked on card");
+  if (keycode == "13") {
+    var caller = e.target || e.srcElement;
+    let radio = caller.querySelector("input[type='radio']");
+    radio.checked = true;
+    updateSelection(radio.dataset.product);
+  }
+}
+
 function openMenu() {
   nav.classList.add("open");
   menuControls.classList.add("open");
@@ -104,7 +125,7 @@ modalTriggers.forEach((trigger) => {
 
 // Update selected product to match selected radio button
 radios.forEach((radio) =>
-  radio.addEventListener("input", () => updateSelection(radio.dataset.product))
+  radio.addEventListener("change", () => updateSelection(radio.dataset.product))
 );
 
 // select product and check radio on header click
@@ -292,5 +313,3 @@ updateAmounts();
 
 // Confirm script is connected
 console.log("script loaded");
-
-
