@@ -1,3 +1,19 @@
+// Initializing micromodal
+MicroModal.init({
+  onShow: (modal) => console.log(`${modal.id} is shown`), // [1]
+  onClose: (modal) => {
+    updateSelection();
+  }, // [2]
+  // openTrigger: "data-custom-open", // [3]
+  // closeTrigger: "data-custom-close", // [4]
+  openClass: "is-open", // [5]
+  disableScroll: true, // [6]
+  disableFocus: false, // [7]
+  awaitOpenAnimation: true, // [8]
+  awaitCloseAnimation: true, // [9]
+  debugMode: true, // [10]
+});
+
 /***************************
 Dom references
 ***************************/
@@ -12,15 +28,12 @@ const nav = document.getElementById("nav");
 const bookmarkBtn = document.getElementById("bookmarkBtn");
 
 // For modals
-const main = document.querySelector("#mainContent");
 const popupModal = document.querySelector(".popup-modal");
-const successModal = document.querySelector(".success-modal");
 const modalTriggers = document.querySelectorAll(".popup-trigger");
 const modalCloseTrigger = document.querySelector(".popup-modal__close");
 const successModalCloseTrigger = document.querySelector(
   ".success-modal__close"
 );
-const bodyBlackout = document.querySelector(".body-blackout");
 const cardWrap = document.querySelectorAll(".cardWrap");
 const pledgeForms = document.querySelectorAll(".cardWrap form");
 const modalHeader = document.querySelectorAll(".cardWrap .head");
@@ -79,35 +92,11 @@ function addBookmark() {
 /***************************
 Modal Logic
 ***************************/
-// Initializing micromodal
-MicroModal.init({
-  onShow: (modal) => console.info(`${modal.id} is shown`), // [1]
-  onClose: (modal) => {
-    updateSelection();
-  }, // [2]
-  // openTrigger: "data-custom-open", // [3]
-  // closeTrigger: "data-custom-close", // [4]
-  openClass: "is-open", // [5]
-  disableScroll: true, // [6]
-  disableFocus: false, // [7]
-  awaitOpenAnimation: true, // [8]
-  awaitCloseAnimation: true, // [9]
-  // debugMode: true, // [10]
-});
 
 // close modals
 // modalCloseTrigger.addEventListener("click", () => {
-//   closeModal(popupModal);
-// });
-
-// Close success modal
-// successModalCloseTrigger.addEventListener("click", () => {
-//   closeModal(successModal);
-// });
-
-// Close modal when you click outside of it
-// bodyBlackout.addEventListener("click", () => {
-//   closeModal();
+//   MicroModal.close("selection-modal");
+//   updateSelection();
 // });
 
 // Open modal when triggers are clicked
@@ -118,20 +107,10 @@ modalTriggers.forEach((trigger) => {
   });
 });
 
-// Closing selection modal and selecting card with keyboard
-modalCloseTrigger.addEventListener("keypress", triggerClick);
+// Selecting card with keyboard on enter
 cardWrap.forEach((card) => {
   card.addEventListener("keypress", selectCard);
 });
-
-// triggers click event of element on enter
-function triggerClick(e) {
-  let keycode = e.keyCode ? e.keyCode : e.which;
-  if (keycode == "13") {
-    var caller = e.target || e.srcElement;
-    caller.click();
-  }
-}
 function selectCard(e) {
   let keycode = e.keyCode ? e.keyCode : e.which;
   var caller = e.target || e.srcElement;
@@ -139,6 +118,16 @@ function selectCard(e) {
     let radio = caller.querySelector("input[type='radio']");
     radio.checked = true;
     updateSelection(radio.dataset.product);
+  }
+}
+
+// triggers click event of element on enter
+modalCloseTrigger.addEventListener("keypress", triggerClick);
+function triggerClick(e) {
+  let keycode = e.keyCode ? e.keyCode : e.which;
+  if (keycode == "13") {
+    var caller = e.target || e.srcElement;
+    caller.click();
   }
 }
 
@@ -244,27 +233,6 @@ function updateAmounts(product) {
     });
   }
 }
-
-// Close modal funtion
-// function closeModal(modal) {
-//   // Remove all error messages and inputs
-
-//   if (modal) {
-//     // close specified modal
-//     modal.classList.remove("is--visible");
-//   } else {
-//     // close all modals
-//     popupModal.classList.remove("is--visible");
-//     successModal.classList.remove("is--visible");
-//   }
-//   bodyBlackout.classList.remove("success");
-//   main.classList.remove("success");
-//   bodyBlackout.classList.remove("is-blacked-out");
-//   main.classList.remove("modal-opened");
-
-//   // remove all selections
-//   updateSelection();
-// }
 
 // Open modal function
 function openModal(product) {
