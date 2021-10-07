@@ -52,27 +52,6 @@ Navbar Logic
 openMenuBtn.addEventListener("click", openMenu);
 closeMenuBtn.addEventListener("click", closeMenu);
 
-modalCloseTrigger.addEventListener("keypress", triggerClick);
-cardWrap.forEach(card => {card.addEventListener("keypress", selectCard)})
-
-function triggerClick(e) {
-  let keycode = e.keyCode ? e.keyCode : e.which;
-  if (keycode == "13") {
-    var caller = e.target || e.srcElement;
-    caller.click();
-  }
-}
-function selectCard(e) {
-  let keycode = e.keyCode ? e.keyCode : e.which;
-  console.log("Enter clicked on card");
-  if (keycode == "13") {
-    var caller = e.target || e.srcElement;
-    let radio = caller.querySelector("input[type='radio']");
-    radio.checked = true;
-    updateSelection(radio.dataset.product);
-  }
-}
-
 function openMenu() {
   nav.classList.add("open");
   menuControls.classList.add("open");
@@ -99,29 +78,68 @@ function addBookmark() {
 /***************************
 Modal Logic
 ***************************/
+// Initializing micromodal
+MicroModal.init({
+  onShow: (modal) => console.info(`${modal.id} is shown`), // [1]
+  onClose: (modal) => {
+    updateSelection();
+  }, // [2]
+  // openTrigger: "data-custom-open", // [3]
+  // closeTrigger: "data-custom-close", // [4]
+  openClass: "is-open", // [5]
+  disableScroll: true, // [6]
+  disableFocus: false, // [7]
+  awaitOpenAnimation: true, // [8]
+  awaitCloseAnimation: true, // [9]
+  // debugMode: true, // [10]
+});
 
 // close modals
-modalCloseTrigger.addEventListener("click", () => {
-  closeModal(popupModal);
-});
+// modalCloseTrigger.addEventListener("click", () => {
+//   closeModal(popupModal);
+// });
 
 // Close success modal
-successModalCloseTrigger.addEventListener("click", () => {
-  closeModal(successModal);
-});
+// successModalCloseTrigger.addEventListener("click", () => {
+//   closeModal(successModal);
+// });
 
 // Close modal when you click outside of it
-bodyBlackout.addEventListener("click", () => {
-  closeModal();
-});
+// bodyBlackout.addEventListener("click", () => {
+//   closeModal();
+// });
 
 // Open modal when triggers are clicked
-modalTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", () => {
-    const product = trigger.dataset.popupTrigger;
-    openModal(popupModal, product);
-  });
+// modalTriggers.forEach((trigger) => {
+//   trigger.addEventListener("click", () => {
+//     const product = trigger.dataset.popupTrigger;
+//     openModal(popupModal, product);
+//   });
+// });
+
+// Closing selection modal and selecting card with keyboard
+modalCloseTrigger.addEventListener("keypress", triggerClick);
+cardWrap.forEach((card) => {
+  card.addEventListener("keypress", selectCard);
 });
+
+// triggers click event of element on enter
+function triggerClick(e) {
+  let keycode = e.keyCode ? e.keyCode : e.which;
+  if (keycode == "13") {
+    var caller = e.target || e.srcElement;
+    caller.click();
+  }
+}
+function selectCard(e) {
+  let keycode = e.keyCode ? e.keyCode : e.which;
+  var caller = e.target || e.srcElement;
+  if (caller.classList.contains("cardWrap") && keycode == "13") {
+    let radio = caller.querySelector("input[type='radio']");
+    radio.checked = true;
+    updateSelection(radio.dataset.product);
+  }
+}
 
 // Update selected product to match selected radio button
 radios.forEach((radio) =>
@@ -156,8 +174,8 @@ forms.forEach((form) => {
       updateAmounts(product);
 
       // Show success modal
-      closeModal(popupModal);
-      openModal(successModal);
+      MicroModal.close("selection-modal");
+      MicroModal.show("success-modal");
     }
   });
 
@@ -220,25 +238,25 @@ function updateAmounts(product) {
 }
 
 // Close modal funtion
-function closeModal(modal) {
-  // Remove all error messages and inputs
+// function closeModal(modal) {
+//   // Remove all error messages and inputs
 
-  if (modal) {
-    // close specified modal
-    modal.classList.remove("is--visible");
-  } else {
-    // close all modals
-    popupModal.classList.remove("is--visible");
-    successModal.classList.remove("is--visible");
-  }
-  bodyBlackout.classList.remove("success");
-  main.classList.remove("success");
-  bodyBlackout.classList.remove("is-blacked-out");
-  main.classList.remove("modal-opened");
+//   if (modal) {
+//     // close specified modal
+//     modal.classList.remove("is--visible");
+//   } else {
+//     // close all modals
+//     popupModal.classList.remove("is--visible");
+//     successModal.classList.remove("is--visible");
+//   }
+//   bodyBlackout.classList.remove("success");
+//   main.classList.remove("success");
+//   bodyBlackout.classList.remove("is-blacked-out");
+//   main.classList.remove("modal-opened");
 
-  // remove all selections
-  updateSelection();
-}
+//   // remove all selections
+//   updateSelection();
+// }
 
 // Open modal function
 function openModal(modal, product) {
